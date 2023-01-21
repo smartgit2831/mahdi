@@ -613,7 +613,13 @@
         </footer>
     </main>
     <script>
-
+        $('.p1').hide()
+        $('.fas1').hide()
+        $('#btnToggle1').click(function(){
+            $('.p1').toggle(1000)
+            $('.fas').toggle($('.fas1').toggle(),$('.fas2').toggle())
+        });
+	    
         var owl = $('.owl-carousel');
         owl.owlCarousel({
 
