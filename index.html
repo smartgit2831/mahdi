@@ -4,96 +4,1187 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css">
-    <link rel=stylesheet" href="./file.css">
-    <script src="http://code.jquery.com/jquery-1.9.1.js" type="text/javascript"></script>
-    <script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js" type="text/javascript"></script>
-    <script type="text/javascript"></script>
-    <title>jadval tartib</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css">
+    <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css">
+    <script src="./git/jquery.min.js"></script>
+    <script src="./git/owl.carousel.js"></script>
+    <link rel="stylesheet" href="./git/owl.carousel.min.css">
+    <link rel="stylesheet" href="./git/owl.theme.default.min.css"> 
+    <title>page</title>
     <style>
-<!--         .center{
-            margin: auto;
-            width: 12px;
-            height: 25px;
-            border: 5px solid red;
+        *{
+    direction: rtl;
+    box-sizing: border-box;
+    }
+    body{
+        overflow-x: hidden;
+        font-size: 16px;
+        margin: 0;
+    }
+    .search{
+        margin-right: 42%;
+    }
+    .container-fluid i{
+    font-size: 3em;
+    color: white;
+    cursor: pointer;
+    }
+    #menu-mobile-container .dark-part{
+        position: fixed;
+        inset: 0;
+        background-color: rgba(0, 0, 0, 0.5);
+        z-index: 2;
+        opacity: 0;
+        pointer-events: none;
+        transition: opacity 0.2s ease-in-out;
+        cursor: pointer;
         }
-        .one{
-            padding: 7px;
-            border: 2px solid aquamarine ;
-            background: gray;
-            border-radius: 12px;
-            overflow-x: inherit;
-            /* display: block; */
-        }
-        .two{
-            padding: 7px;
-            border: 2px solid aquamarine ;
-            background: gray;
-            border-radius: 12px;
-            overflow-x: hidden;
-            /* display: block; */
-        } -->
-    </style>
-    <script>
-        $(document).ready(function (){
-            $('#list1, #list2').sortable({connectWith:"tr"})}   
-        )
-        function mahdi(){
-            let one = document.getElementById('one');
-            let two = document.getElementById('two');
-            let three = document.getElementById('three');
-            let four = document.getElementById('four');
-            let five = document.getElementById('five');
-            let six = document.getElementById('six');
-            let seven = document.getElementById('seven');
-            let eight = document.getElementById('eight');
-            let nine = document.getElementById('nine');
-            let ten = document.getElementById('ten');
-            // if ( ) {
-            //     alert('hi');
-                
-            // }
-        }
-        // let points = [one, two, three, four, five, six, seven, eight, nine, ten];
-        let points = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
-        document.getElementById("demo").innerHTML = points;
-        function myfunc(){
-            points.sort(function(a,b){return a - b });
-            document.getElementById("demo").innerHTML = points
-        }
+    #menu-mobile-container.active .dark-part{
+        opacity: 1;
+        pointer-events: auto;
+    }
+    nav.mobile{
+        margin-right: 0;
+        z-index: 2;
+        position: fixed;
+        top: 12%;
+        bottom: 0;
+        background-color: rgb(49, 45, 45);
+        min-width: 300px;
+        box-shadow: 0px 2px 8px 0px rgba(0, 0, 0, 0.8);
+        padding: 2rem 0;
+        transform: translateX(120%);
+        transition: transform 0.3s ease-in-out;
+        overflow-y:auto ;
+    }
+    #menu-mobile-container.active nav.mobile{
+        transform: translateX(10%);
+    }
+    nav.mobile ul{
+        color: white;
+        cursor: pointer;
+    }
+    .darbare-ma li{
+        padding: 3px;
+        margin: 3px; 
+        background: rebeccapurple;
+        border-radius: 22px;
+        box-shadow: 0px 2px 8px 0px rgba(247, 100, 222, 0.8);
+    }
+    .darbare-ma li:hover{
+        background: rgb(10, 9, 10);
+        border-radius: 22px;
+        box-shadow: 8px 2px 8px 4px rgba(228, 72, 72, 0.8);
+        transition: 0.7s;
 
-        // one < two && two < three && three < four && four < five && five < six && six < seven
-    </script>
+    }
+    nav.mobile ul li a{
+        padding: 0.8rem 2rem;
+        display: block;
+        color: rgb(241, 212, 47);
+        font-size: 1.5em;
+        letter-spacing: 1px;
+        transition: all 0.2s ease-in-out;
+        text-decoration: none;
+        box-shadow: 0px 2px 8px 0px rgba(21, 247, 13, 0.8);
+        transition: 2s;
+        border-radius: 4px;
+    }
+    nav.mobile ul li:hover a{
+        border-radius: 12px;
+        opacity: 0.8;
+        background:rgb(77, 225, 245) ;
+    }
+    .img1{
+        width: 100%;
+        height: 300px;
+        display: none;
+    }
+    .img2{
+        margin-top: 6%;
+        display: flex;
+    }
+    .active{
+        display: block;
+    }
+    #mahdi{
+        width: 100%;
+        height: 300px;
+    }
+    .alaghe{
+        margin-top: 10px;
+        display: flex;
+        background: rgb(247, 246, 242);
+        padding-right: 6px;
+        border: 1px solid #454949;
+        border-radius: 25px;
+        opacity:0.9;
+        box-shadow:1px 2px 8px 1px rgba(32, 31, 31, 0.5) ;
+    }
+    .counter-container{
+        display: flex;
+        justify-content: center;
+        text-align: center;
+        flex-direction: column;
+        margin: auto;
+    }
+    .count{
+        font-size: 28px;
+    }
+    .counter{
+        margin-top: 10px;
+        font-size: 50px;
+    }
+
+
+
+    .owl-stage-outer{
+        direction: ltr;
+    }
+    .product-sec-new{
+        padding: 20px 10px;
+        font-size: 1em;
+    }
+    .shoping-card{
+        position: relative;
+        text-align: center;
+        box-shadow: 0px 2px 8px 0px rgba(0, 0, 0, 0.2);
+        margin: 10px 15px;
+        border-radius: 5px;
+        padding: 10px;
+    }
+    /*product sec new + khat balay aks*/
+    .shoping-card::before{
+        position: absolute;
+        content: '';
+        width: 20%;
+        height: 4px;
+        background:rgb(243, 9, 9);
+        left: 0;
+        top: 0;
+        transition: width 0.2s ease-in-out;
+    }
+    .shoping-card:hover:before{
+        width: 100%;
+    }
+    /**/
+    .shoping-card .img-sec{
+        position: relative;
+    }
+    .shoping-card .img-sec1 img{
+        width: 60%;
+        border-radius: 12px;
+    }
+    .shoping-card .img-sec img{
+        height: 250px;
+        width: 60%;
+        border-radius: 12px;
+        transition: all 0.4s ease-in-out;
+    }
+    /* ghesmat bold shodan aks ha */
+    .shoping-card:hover .img-sec img{
+        transform: scale(1.1);
+    }
+    /**/
+    .shoping-card .img-sec .hot-offer{
+        background-color: #e74c3c;
+        color: white;
+        padding: 3px 5px;
+        border-radius: 5px;
+        position: absolute;
+        right: 10px;
+        top: 10px;
+        font-size: 0.9em;
+    }
+    .shoping-card .img-sec .stars{
+        position: absolute;
+        left: 10px;
+        top: 10px;
+        color: #f1c40f;
+    }
+    .shoping-card .title{
+        color: #333;
+        margin: 15px;
+    }
+    .shoping-card .buttons{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 5px 15px;
+    }
+    .shoping-card .buttons .right .price{
+        color: #666;
+        font-weight: bold;
+    }
+    .shoping-card .buttons .left{
+        display: flex;
+    }
+    .shoping-card .buttons .left .extend-btn{
+        display: flex;
+        margin-left: 5px;
+        align-items: center;
+        justify-content: space-between;
+        background-color: #2ecc71;
+        color: white;
+        width: 40px;
+        padding: 8px 12px;
+        border-radius: 25px;
+        cursor: pointer;
+        transition: .75s;
+    }
+    .shoping-card .buttons .left .extend-btn:hover{
+        width: 100px;
+    }
+    .shoping-card .buttons .left .extend-btn:hover .b-text{
+        display: block;
+    }
+    .shoping-card .buttons .left .extend-btn .b-text{
+        display: none;
+        color: white;
+        text-decoration: none;
+    }
+    .shoping-card .buttons .left .extend-btn .b-icon{
+        color: white;
+    }
+
+
+
+
+
+
+    .super-offer-section{
+        padding: 20px;
+        font-size: 1em;
+    }
+    .super-offer-section .super-offer-box{
+        text-align: center;
+        box-shadow: 0px 2px 8px 0px rgba(0, 0, 0, 0.2);
+        border-radius: 5px;
+        margin: 0px 10px;
+    }
+    .super-offer-box .super-offer-box-title{
+        background-color: #e74c3c;
+        color: white;
+        padding: 8px 30px;
+        display: inline-block;
+        border-bottom-right-radius: 25px;
+        border-bottom-left-radius: 25px;
+    }
+    .super-offer-box .body .image-container{
+        text-align: center;
+        padding: 30px;
+    }
+    .super-offer-box .body .image-container img{
+        width: 100%;
+        border-radius: 8px;
+        box-shadow: 2px 2px 8px 8px rgba(0, 0, 0, 0.8);
+    }
+    .super-offer-box .body .spesification{
+        padding: 30px 5px;
+    }
+    .super-offer-box .body .spesification .price-row{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .super-offer-box .body .spesification .price-row .price{
+        margin-left: 50px;
+        color: #444;
+        font-size: 1.2em;
+    }
+    .super-offer-box .body .spesification .price-row .off{
+        color: white;
+        background-color: #e74c3c;
+        padding: 5px 20px;
+        border-radius: 25px;
+    }
+    .super-offer-box .body .spesification .title{
+        margin: 40px 0;
+        font-weight: bold;
+        color: #444;
+        font-size: 1.4em;
+    }
+    .super-offer-box .body .spesification .counter-down{
+        border-top: 1px solid rgba(0, 0, 0, 0.4);
+        margin: 10px 40px;
+        padding-top: 20px;
+        font-weight: bold;
+        color: #666;
+        font-size: 1.5em;
+    }
+    .super-offer-box .body .spesification .remaining-time{
+        color: #777;
+        font-size: 0.8em;
+    }
+
+    .banner{
+        text-align: center;
+        padding: 0px 5px;
+    }
+    .banner img{
+        border-radius: 5px;
+        box-shadow: 0px 2px 8px 0px rgba(0, 0, 0, 0.2);
+        height: 335px;
+        width: 100%;
+    }
+    .owl-stage-outer{
+        direction: ltr;
+    }
+    .dragble-list img{
+        height: 200px;
+        width: 70% !important;
+        margin: auto;
+    }
+    .dragble-list .title{
+        padding:0px 20px;
+        padding-bottom: 20px;
+    }
+    .dragble-list .title span{
+        font-size: 1.2em;
+        color: #444;
+        border-bottom: 2.5px solid #e74c3c;
+    }
+    .charkhesh-aks{
+        -moz-transition: all 0.8s ease-in-out;
+        -webkit-transition: all 0.8s ease-in-out;
+        -o-transition: all 0.8s ease-in-out;
+        -ms-transition: all 0.8s ease-in-out;
+        transition: all 0.8s ease-in-out;
+    }
+    .charkhesh-aks:hover{
+        -moz-transform: rotate(360deg);
+        -webkit-transform: rotate(360deg);
+        -o-transform: rotate(360deg);
+        -ms-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
+    .slider .slides .item .click:hover{
+        width: 100px;
+    }
+    .slider .slides .item .click:hover .b-icon{
+        display: block;
+    }
+    .slider .slides .item .click .b-icon{
+        display: none;
+    }
+    .slider .slides .item .click:hover .b-icon {
+        color: rgb(70, 182, 247);
+
+    }
+    .slider .slides .item .click .button{
+        border: none;
+        border-radius: 12px;
+        color: rgba(54, 52, 51, 0.8);
+        background-color: rgb(39, 207, 67);
+    }
+    .ico{
+        border: 2px solid rgb(39, 207, 67);
+        background-color: rgb(39, 207, 67);
+        font-size: 1.2em;
+        display: flex;
+        transition: 0.95s;
+        width: 120px;
+        box-shadow: 2px 2px 8px 8px rgb(249, 249, 250,0.8);
+        border-radius: 12px;
+        cursor: pointer;
+    }
+
+    .ico:hover{
+        width: 100%;
+    }
+    .ico:hover .button{
+        display: block;
+    }
+    .ico .button{
+        display: none;
+    }
+    .dragble-list p{
+        width: 80%;
+        text-align: center;
+        margin-right: 10%;
+        background:rgb(255, 252, 55);
+        padding:8px ;
+        border-top-right-radius: 50px;
+    }
+
+    .card{
+        padding-right: 6px;
+        margin: auto;
+        border: 1px solid #46d2eb;
+    }
+    .card img{
+        width: 300px;
+        border-radius: 12px;
+        padding: 5px 25px;
+        margin: 20px;
+        box-shadow: 0px 2px 8px 0px rgba(0, 0, 0, 0.8);
+    }
+    footer{
+        background-color: #636e72;
+        font-size: 1em;
+    }
+    footer .right{
+        padding: 40px;
+    }
+    footer .right .title{
+        padding: 10px 0;
+        color: white;
+        font-size: 1.2em;
+        border-bottom: 2px solid white;
+    }
+    footer .right .adress{
+        border-top:1px solid white;
+        font-size: 22px;
+    }
+    footer .right .des .button1{
+        margin-bottom: 68px;
+    }
+    .namad-electonik img{
+        width: 300px;
+        margin-top:17px;
+        margin-left: 22px;
+        border-radius: 17px;
+    }
+
+
+    footer .right .des{
+        color: rgba(255, 255, 255, 0.7);
+        line-height: 1.9em;
+        font-size: 0.9em ;
+    }
+
+    footer .left{
+        padding: 40px;
+    }
+    footer .left .title{
+        padding: 10px 0;
+        font-size: 1.2em;
+        color: white;
+    }
+    footer .left .socials{
+        display: flex;
+        justify-content: space-around;
+        margin-top: 20px;
+    }
+    footer .left .socials a{
+        color: white;
+        font-size: 1.4em;
+    }
+    footer .bottom{
+        background-color: #2d3436;
+        text-align: center;
+        padding: 10px;
+        color: rgba(255, 255, 255, 0.9);
+    }
+    </style>
 </head>
 <body>
-    <button onclick="myfunc()">try it</button>
-    <p id="demo"></p>
-    <table class="center" id="sortable">
-        <tr id="list1">
-            <td class="one" id="one">1</td>
-            <td class="one" id="two">2</td>
-            <td class="one" id="three">3</td>
-            <td class="one" id="four">4</td>
-            <td class="one" id="five">5</td>
-        </tr>
-        <tr id="list2">
-            <td class="two" id="six">6</td>
-            <td class="two" id="seven">7</td>
-            <td class="two" id="eight">8</td>
-            <td class="two" id="nine">9</td>
-            <td class="two" id="ten">10</td>
-        </tr>
-    </table>
+    <header>
+		<nav class="navbar fixed-top navbar-expand-sm bg-dark navbar-dark">
+			<div class="container-fluid">
+                <div id="triggermenu">
+                    <i class="bx bx-menu"></i>
+                </div>
+				<img src="I:\New folder (2)\html\picture\horse.jpg" alt="Logo" style="width:40px;" class="rounded-pill">
+			  	<a class="navbar-brand">تزینات سنگ خاشعی</a>
+			  		<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar">
+					<span class="navbar-toggler-icon"></span>
+			  	</button>
+			  	<div class="collapse navbar-collapse" id="collapsibleNavbar">
+					<ul class="navbar-nav">
+				  		<li class="nav-item ">
+							<a class="nav-link" href="hom.html">خانه</a>
+				 		</li>
+				  		<li class="nav-item ">
+							<a class="nav-link" href="about.html">درباره</a>
+				  		</li>
+				  		<li class="nav-item ">
+							<a class="nav-link" href="#">بیشتر</a>
+				  		</li>  
+				  		<li class="nav-item dropdown">
+							<a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">more</a>
+							<ul class="dropdown-menu">
+					  			<li><a class="dropdown-item" href="#mahsool">محصولات</a></li>
+					  			<li><a class="dropdown-item" href="#mahsool">تماس</a></li>
+							</ul>
+				 	 	</li>
+					</ul>
+					<form class="d-flex search" id="form">
+						<input id="search" class="form-control me-2"  type="text" placeholder="Search">
+						<button class="btn btn-primary" type="button">Search</button>
+					</form>
+			  	</div>
+			</div>
+		</nav>
+    </header>
+    <main>
+        <div id="menu-mobile-container">
+            <div class="dark-part"></div>
+            <nav id="mobile-menu" class="menu mobile">
+                <ul class="fehrest"> محصولات <i class="fas fa-angle-right fehrest1"></i> <i class="fas fa-angle-left fehrest2"></i>
+                    <li><a href="">روشویی</a></li>
+                    <li><a href="">ابنما</a></li>
+                    <li><a href="">صراحی</a></li>
+                    <li><a href="">تزینی</a></li>
+                    <li><a href="">پایه ایفون</a></li>
+                    <li><a href="">پایه ستون</a></li>
+                </ul>
+                <ul class="darbare-ma"> درباره ما <i class="fas fa-angle-right darbare-ma1"></i> <i class="fas fa-angle-left darbare-ma2"></i>
+                    <li>تماس: 00000000000</li>
+                    <li>ادرس : تهران </li>
+                    <li>واتساپ: 00000000000   </li>
+                    <li>تلگرام: 00000000000 </li>
+                    <li>اینستاگرام: shey </li>
+                    <li>فیسبوک: 00000000000 </li>
+                </ul>
+                <!-- ghesmate mouse hover color hcon 3 khat -->
+                <div class="container" id="container"></div>
+            </nav>
+        </div>
+        <div class="img2">
+            <div class="img1 active">
+                <img id="mahdi" src="./git/choob.png" alt="">
+            </div>
+            <div class="img1">
+                <img id="mahdi" src="./git/scissor.png" alt="">
+            </div>
+            <div class="img1">
+                <img id="mahdi" src="./git/toop1.png" alt="">
+            </div>
+        </div>
+        <div class="alaghe">
+            <div class="counter-container">
+                <div class="counter" data-target="1971">1971</div>
+                <i class="fab fa-youtube fa-3x pop"></i>
+                <span class="count">یوتیوب</span>
+            </div>
+            <div class="counter-container">
+                <div class="counter" data-target="2351">2351</div>
+                <i class="fab fa-facebook fa-3x pop"></i>
+                <span class="count">فیسبوک</span>
+            </div>
+        </div>
+        <section class="product-sec-new">
+            <div class="row">
+                <div class="col-sm-3  ">
+                    <div class="shoping-card">
+                        <div class="img-sec pop">
+                            <img src="./git/choob.png" alt="">
+                            <div class="stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                        <div class="title">
+                            روشویی gfgfgfgf
+                        </div>
+                        <div class="buttons">
+                            <div class="right">
+                                <span class="price">800 هزار تومان</span>
+                            </div>
+                            <div class="left">
+                                <div class="extend-btn">
+                                    <span onclick="myClone()" class="b-text">علاقه</span>
+                                    <a class="b-icon" href=""><i class="fas fa-heart"></i></a>
+                                </div>
+                                <div class="extend-btn">
+                                    <span onclick="addToCart(0)" class="b-text">خرید</span>
+                                    <span class="b-icon" ><i class="fas fa-shopping-cart"></i></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
-    <!-- <ul class="center" id="list1">
-        <li>HTML</li>
-        <li>CSS</li>
-        <li>JS</li>
-    </ul>
-    <ul class="center" id="list2" >
-        <li>PHP</li>
-        <li>ASP</li>
-        <li>JSP</li>
-    </ul> -->
+                <div class="col-sm-3 ">
+                    <div class="shoping-card">
+                        <div class="img-sec pop">
+                            <img src="./git/scissor.png"  alt="">
+                            <span class="hot-offer">پیشنهاد ویژه</span>
+                            <div class="stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                        <div class="title">
+                            پایه ستون
+                        </div>
+                        <div class="buttons">
+                            <div class="right">
+                                <span class="price">750 هزار تومان</span>
+                            </div>
+                            <div class="left">
+                                <div class="extend-btn">
+                                    <span class="b-text" href="">علاقه</span>
+                                    <a class="b-icon" href=""><i class="fas fa-heart"></i></a>
+                                </div>
+                                <div class="extend-btn">
+                                    <span onclick="addToCart(1)" class="b-text" href="">خرید</span>
+                                    <span class="b-icon" href=""><i class="fas fa-shopping-cart"></i></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            
+                <div class="col-sm-3 ">
+                    <div class="shoping-card">
+                        <div class="img-sec pop">
+                            <img src="./git/toop1.png" alt="">
+                            <div class="stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                        <div class="title">
+                            ابنما
+                        </div>
+                        <div class="buttons">
+                            <div class="right">
+                                <span class="price">1200 هزار تومان</span>
+                            </div>
+                            <div class="left">
+                                <div class="extend-btn">
+                                    <a class="b-text" href="">علاقه</a>
+                                    <a class="b-icon" href=""><i class="fas fa-heart"></i></a>
+                                </div>
+                                <div class="extend-btn">
+                                    <span onclick="addToCart(2)" class="b-text" href="">خرید</span>
+                                    <a class="b-icon" href=""><i class="fas fa-shopping-cart"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            
+                <div class="col-sm-3  ">
+                    <div class="shoping-card">
+                        <div class="img-sec pop">
+                            <img src="./git/choob.png" alt="">
+                            <span class="hot-offer">پیشنهاد ویژه</span>
+                            <div class="stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                        <div class="title">
+                            پایه ایفون
+                        </div>
+                        <div class="buttons">
+                            <div class="right">
+                                <span class="price">600 هزار تومان</span>
+                            </div>
+                            <div class="left">
+                                <div class="extend-btn">
+                                    <a class="b-text" href="">علاقه</a>
+                                    <a class="b-icon" href=""><i class="fas fa-heart"></i></a>
+                                </div>
+                                <div class="extend-btn">
+                                    <span onclick="addToCart(3)"  class="b-text" href="">خرید</span>
+                                    <a class="b-icon" href=""><i class="fas fa-shopping-cart"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="super-offer-section">
+            <div class="row">
+                <div class="col-lg-9">
+                    <div class="super-offer-box">
+                        <span class="super-offer-box-title">
+                            پیشنهاد شگفت انگیز
+                        </span>
+                        <div class="body">
+                            <div class="row">
+                                <div class="col-lg-4">
+                                    <div class="image-container">
+                                        <!-- charkhesh aks  -->
+                                        <img class="charkhesh-aks" src="./git/scissor.png" alt="">
+                                    </div>
+                                </div>
+                                <div class="col-lg-8">
+                                    <div class="spesification">
+                                        <div class="price-row">
+                                            <div class="price">هشتصد هزار تومان</div>
+                                            <div class="off">تخفیف 60%</div>
+                                        </div>
+                                        <div class="title">روشویی مدل تک پایه</div>
+                                        <div class="counter-down">
+                                            <span id="secounds">40</span> :
+                                            <span id="minutes">26</span> :
+                                            <span id="hours">19</span>
+                                        </div>
+                                        <div class="remaining-time">زمان باقی مانده تا پایان سفارش</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3">
+                    <div class="banner">
+                        <img src="./git/scissor.png" alt="">
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="dragble-list">
+            <div class="title ico">
+                <a id="btnToggle1">روشویی <i class="fas fa-angle-left fas2"></i><i class="fas fa-angle-right fas1"></i></a>
+                <a href="" class="button"><i class="fas fa-angle-left fas2"></i><i class="fas fa-angle-left fas2"></i><i class="fas fa-angle-left fas2"></i>
+                    <i class="fas fa-angle-right fas1"></i><i class="fas fa-angle-right fas1"></i><i class="fas fa-angle-right fas1"></i></a>
+            </div>
+            <p class="p1">روشویی های سنگی یکی از هنر های زیبایی هست که در حمام یا سرویس بهداشتی به کار میرود که دکوراسیونی بسیار شیک و جذاب برای شما به وجود می اورد مهم ترین ویژگی یک روشویی علاوه بر طراحی بسیار زیبا و متنوع کیفیت و دوام فوق العااده ان است
+                تا به حال دیده اید که روشویی های چینی با طی کردن یک مدت زمان رنگ انها تغیر کرده و لکه هایی بوجود می اید که این لک ها و رنگ در روشویی سنگی نه تنها نمیرود بلکه نظافت انها بسیار اسان است
+                برای دیدن روشویی ها می توانید روی تصویر یا کلمه روشویی کلیک کنید</p>
+            <div id="owl-product" class="owl-carousel owl-theme">
+                <div class="item">
+                    <div class="shoping-card">
+                        <div class="img-sec">
+                            <img src="./git/toop1.png" alt="">
+                            <div class="stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                    <div class="title">
+                        روشویی
+                    </div>
+                    <div class="buttons">
+                        <div class="right">
+                            <span class="price">1100 هزار تومان</span>
+                        </div>
+                        <div class="left">
+                            <div class="extend-btn">
+                                <a class="b-text" href="">علاقه</a>
+                                <a class="b-icon" href=""><i class="fas fa-heart"></i></a>
+                            </div>
+                            <div class="extend-btn">
+                                <span onclick="addToCart(4)"  class="b-text" href="">خرید</span>
+                                <a class="b-icon" href=""><i class="fas fa-shopping-cart"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+                <div class="item">
+                    <div class="shoping-card">
+                        <div class="img-sec">
+                            <img src="./git/choob.png" alt="">
+                            <div class="stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                        <div class="title">
+                            روشویی
+                        </div>
+                        <div class="buttons">
+                            <div class="right">
+                                <span class="price">950 هزار تومان</span>
+                            </div>
+                            <div class="left">
+                                <div class="extend-btn">
+                                    <a class="b-text" href="">علاقه</a>
+                                    <a class="b-icon" href=""><i class="fas fa-heart"></i></a>
+                                </div>
+                                <div class="extend-btn">
+                                    <span onclick="addToCart(5)"  class="b-text" href="">خرید</span>
+                                    <a class="b-icon" href=""><i class="fas fa-shopping-cart"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+    
+                <div class="item">
+                    <div class="shoping-card">
+                        <div class="img-sec">
+                            <img src="./git/scissor.png" alt="">
+                            <div class="stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                        <div class="title">
+                            روشویی
+                        </div>
+                        <div class="buttons">
+                            <div class="right">
+                                <span class="price">650 هزار تومان</span>
+                            </div>
+                            <div class="left">
+                                <div class="extend-btn">
+                                    <a class="b-text" href="">علاقه</a>
+                                    <a class="b-icon" href=""><i class="fas fa-heart"></i></a>
+                                </div>
+                                <div class="extend-btn">
+                                    <span onclick="addToCart(6)"  class="b-text" href="">خرید</span>
+                                    <a class="b-icon" href=""><i class="fas fa-shopping-cart"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+    
+                <div class="item">
+                    <div class="shoping-card">
+                        <div class="img-sec">
+                            <img src="./git/toop1.png" alt="">
+                            <div class="stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                        <div class="title">
+                            روشویی
+                        </div>
+                        <div class="buttons">
+                            <div class="right">
+                                <span class="price">800 هزار تومان</span>
+                            </div>
+                            <div class="left">
+                                <div class="extend-btn">
+                                    <a class="b-text" href="">علاقه</a>
+                                    <a class="b-icon" href=""><i class="fas fa-heart"></i></a>
+                                </div>
+                                <div class="extend-btn">
+                                    <span onclick="addToCart(7)"  class="b-text" href="">خرید</span>
+                                    <a class="b-icon" href=""><i class="fas fa-shopping-cart"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+    
+                <div class="item">
+                    <div class="shoping-card">
+                        <div class="img-sec">
+                            <img src="./git/choob.png" alt="">
+                            <div class="stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                        <div class="title">
+                            روشویی
+                        </div>
+                        <div class="buttons">
+                            <div class="right">
+                                <span class="price">750 هزار تومان</span>
+                            </div>
+                            <div class="left">
+                                <div class="extend-btn">
+                                    <a class="b-text" href="">علاقه</a>
+                                    <a class="b-icon" href=""><i class="fas fa-heart"></i></a>
+                                </div>
+                                <div class="extend-btn">
+                                    <span onclick="addToCart(8)"  class="b-text" href="">خرید</span>
+                                    <a class="b-icon" href=""><i class="fas fa-shopping-cart"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+    
+                <div class="item">
+                    <div class="shoping-card">
+                        <div class="img-sec">
+                            <img src="./git/scissor.png" alt="">
+                            <div class="stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                        <div class="title">
+                            روشویی
+                        </div>
+                        <div class="buttons">
+                            <div class="right">
+                                <span class="price">900 هزار تومان</span>
+                            </div>
+                            <div class="left">
+                                <div class="extend-btn">
+                                    <a class="b-text" href="">علاقه</a>
+                                    <a class="b-icon" href=""><i class="fas fa-heart"></i></a>
+                                </div>
+                                <div class="extend-btn">
+                                    <span onclick="addToCart(9)"  class="b-text" href="">خرید</span>
+                                    <a class="b-icon" href=""><i class="fas fa-shopping-cart"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+    
+                <div class="item">
+                    <div class="shoping-card">
+                        <div class="img-sec">
+                            <img src="./git/toop1.png" alt="">
+                            <div class="stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                        <div class="title">
+                            روشویی
+                        </div>
+                        <div class="buttons">
+                            <div class="right">
+                                <span class="price">1200 هزار تومان</span>
+                            </div>
+                            <div class="left">
+                                <div class="extend-btn">
+                                    <a class="b-text" href="">علاقه</a>
+                                    <a class="b-icon" href=""><i class="fas fa-heart"></i></a>
+                                </div>
+                                <div class="extend-btn">
+                                    <span onclick="addToCart(10)"  class="b-text" href="">خرید</span>
+                                    <a class="b-icon" href=""><i class="fas fa-shopping-cart"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+    
+                <div class="item">
+                    <div class="shoping-card">
+                        <div class="img-sec">
+                            <img src="./git/choob.png" alt="">
+                            <div class="stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                        <div class="title">
+                            روشویی
+                        </div>
+                        <div class="buttons">
+                            <div class="right">
+                                <span class="price">800 هزار تومان</span>
+                            </div>
+                            <div class="left">
+                                <div class="extend-btn">
+                                    <a class="b-text" href="">علاقه</a>
+                                    <a class="b-icon" href=""><i class="fas fa-heart"></i></a>
+                                </div>
+                                <div class="extend-btn">
+                                    <span onclick="addToCart(11)" class="b-text" href="">خرید</span>
+                                    <a class="b-icon" href=""><i class="fas fa-shopping-cart"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- aks keshoey khodkar -->
+        <div dir="rtl" class="card scrool-animate" >
+            <aside  class="clearfix" >
+                <figure>
+                    <marquee   dir="ltr"><a href=""><img class="img11"  class="tas" src="./git/choob.png" alt="soarhi" /></a>
+    
+    
+                    <a href=""><img class="img11" class="tas" src="./git/scissor.png" alt="sher" /></a>
+    
+                    <a href=""><img class="img11" class="tas" src="./git/toop1.png" alt="sher" /></a>
+    
+                    <a href=""><img class="img11" class="tas" src="./git/choob.png" alt="sher" /></a></marquee>
+                </figure>
+            </aside>
+        </div>
+        <footer>
+            <div class="row" style="margin-left: 0;">
+                <div class="col-lg-8 col-sm-8 col-p-8">
+                    <div class="right">
+                        <div class="title">
+                            درباره ما
+                        </div>
+                        <div class="des">
+                            <ul class="button1">
+                                <button type="button" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown">محصولات</button>
+                                <ul class="dropdown-menu">
+                                    <m><button type="button" class="btn btn-primary"><a class="dropdown-item" href="sorahi.html">صراحی </a></button></m>
+                                    <m><button type="button" class="btn btn-primary"><a class="dropdown-item" href="sher.html"> شیر </a></button></m>
+                                    <m><button type="button" class="btn btn-primary"><a class="dropdown-item" href="tazeenat.html"> قطعات </a></button></m>
+                                    <m><button type="button" class="btn btn-primary"><a class="dropdown-item" href="roshoyee.html"> روشویی </a></button></m>
+                                    <m><button type="button" class="btn btn-primary"><a class="dropdown-item" href="abnama.html"> ابنما </a></button></m>
+                                    <m><button type="button" class="btn btn-primary"><a class="dropdown-item" href="abnama.html"> پایه ایفون </a></button></m>
+                                </ul>
+                            </ul>
+                        </div>
+                        <div class="adress">
+                            <p>نشانی:  شهر تهران  </p>
+                            <p>تلفن تماس:    000000000000</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-sm-4 col-p-4">
+                    <div class="left">
+                        <div class="title">
+                            ما را در شبکه های اجتماعی دنبال کنید
+                        </div>
+                        <div class="socials">
+                            <a href=""><i class="fab fa-twitter"></i></a>
+                            <a href=""><i class="fab fa-instagram"></i></a>
+                            <a href=""><i class="fab fa-linkedin"></i></a>
+                            <a href=""><i class="fab fa-telegram-plane"></i></a>
+                        </div>
+                        <div class="namad-electonik">
+                            <img src="./picture/kha.jpg" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="bottom">
+                کلیه حقوق محفوظ می باشد 2022 ©
+            </div>
+        </footer>
+    </main>
+    <script>
+
+        let triggermenu = document.querySelector('#triggermenu');
+        let mobilemenu = document.querySelector('#menu-mobile-container');
+        let closemenu = document.querySelector('#menu-mobile-container .dark-part');
+
+        triggermenu.addEventListener("click", function(){
+            mobilemenu.classList.add("active");
+        });
+        closemenu.addEventListener("click", function(){
+            mobilemenu.classList.remove("active");
+        });
+
+        $('.fehrest li').hide()
+        $('.fehrest1').hide()
+        $('.fehrest').click(function(){
+            $('.fehrest li').toggle(1000)
+            $('.fehrest1').toggle($('.fehrest1').toggle(),$('.fehrest2').toggle())
+        });
+        $('.darbare-ma li').hide()
+        $('.darbare-ma1').hide()
+        $('.darbare-ma').click(function(){
+            $('.darbare-ma li').toggle(1000)
+            $('.darbare-ma1').toggle($('.darbare-ma1').toggle(),$('.darbare-ma2').toggle())
+        });
+        let img2  = document.querySelector('img2');
+        let img1 = document.querySelectorAll('.img1');
+        let active = document.querySelector('.active');
+        let n =0;
+
+        function hide(){
+            for (let index = 0; index < img1.length; index++) {
+                const element = img1[index];
+                element.style.display="none"
+                
+            }  
+        }        
+        function show(){    
+            for (let index = 0; index < img1.length; index++) {
+                const element = img1[index];
+                element.classList.remove('active')
+        
+            }
+        }
+        setInterval(() => {
+            n++;
+            if(n>img1.length-1){
+                n=0
+            }
+            hide();
+            show();
+            img1[n].style.display='block';
+            img1[n].classList.add('active');
+        }, 4000);
+        const counters = document.querySelectorAll(".counter"); 
+        counters.forEach((counter) => {
+            counter.innerText = "0";
+
+            const updateCountent = () => {
+                const target = +counter.getAttribute("data-target");
+                const c = +counter.innerText;
+                const increment = target / 1000;
+
+                if(c < target){
+                    counter.innerText = `${Math.ceil(c + increment)}`
+                    setTimeout(updateCountent, 1) 
+                }else{
+                    counter.innerText = target;
+                }
+            };
+            updateCountent();
+        });
+        let remainingtime = 70000;
+
+        function setTime(){
+            if(remainingtime == 0) return;
+            let h = Math.floor(remainingtime / 3600);
+            let m = Math.floor((remainingtime % 3600)/60);
+            let s = ((remainingtime % 3600)%60);
+            document.querySelector('#hours').innerHTML = h;
+            document.querySelector('#minutes').innerHTML = m;
+            document.querySelector('#secounds').innerHTML = s;
+        };
+
+        setInterval( ()=>{
+            remainingtime -= 1;
+            setTime();
+        },1000)
+        $('.p1').hide()
+        $('.fas1').hide()
+        $('#btnToggle1').click(function(){
+            $('.p1').toggle(1000)
+            $('.fas').toggle($('.fas1').toggle(),$('.fas2').toggle())
+        });
+        var owl = $('.owl-carousel');
+        owl.owlCarousel({
+
+            margin: 10,
+            loop: true,
+            responsive: {
+            0: {
+            items: 1
+            },
+            600: {
+            items: 2
+            },
+            1000: {
+            items: 3
+            }
+        }
+        })
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.0/dist/Chart.min.js"></script>
 </body>
 </html>
