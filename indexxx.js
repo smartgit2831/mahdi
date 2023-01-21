@@ -26,12 +26,6 @@
         let active = document.querySelector('.active');
         let n =0;
 
-        $('.p1').hide()
-        $('.fas1').hide()
-        $('#btnToggle1').click(function(){
-            $('.p1').toggle(1000)
-            $('.fas').toggle($('.fas1').toggle(),$('.fas2').toggle())
-        });
         function hide(){
             for (let index = 0; index < img1.length; index++) {
                 const element = img1[index];
