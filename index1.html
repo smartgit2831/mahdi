@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css">
+
+    <title>git1</title>
+    <style>
+        body{
+            overflow-x: hidden;
+            margin: 0px;
+        }
+        li{
+            list-style: none;
+        }
+        a{
+            text-decoration: none;
+        }
+        .nav-link{
+            color: rgb(187, 202, 50);
+        }
+        .contain{
+            background: rgb(23, 38, 66);
+            margin: 0px 0px 0px 0px;
+            padding: 8px 0px 8px 0px;
+            position: fixed;
+            width: 100%;
+        }
+        .tab-pane ul li{
+            margin: 10px;
+        }
+        .tab-pane ul li a{
+            border: 2px solid rgb(9, 255, 0);
+            border-radius: 8%;
+            background: greenyellow;
+            padding: 2px;
+            
+        }
+        .search{
+            margin-left: 40%;
+        }
+        .nav-link{
+            margin-left: 18%;
+        }
+        .bundell{
+            background: rgb(9, 87, 233);
+            border-bottom-left-radius: 18%;
+            border-bottom-right-radius: 18%;
+            padding: 45px;
+        }
+        @media(max-width:500px){
+            .bundell{
+                background: rgb(9, 87, 233);
+                padding: 25px;
+            }
+            .box{
+                width: 81px;
+                padding: 25px;
+                height: 25px;
+                display:flex ;
+                text-align: center;
+                justify-content: center;
+                margin-left: 15px;
+            }
+            .fasele{
+                margin-left: 20px;
+            }
+            .fasela{
+                margin-left: 25px;
+            }
+            .bux{
+                margin: auto;
+                width: 322px;
+            }
+            .kol{
+                display: none;
+            }
+            .delay{
+                margin-top: 24%;
+            }
+        }
+
+
+        .box{
+            border: 1px solid white;  
+            border-radius: 22%;
+            background: rgb(236, 230, 230);
+            width: 81px;
+            height: 73px;
+            box-shadow: 0px 3px 8px 0px rgba(14, 12, 12, 0.8);
+        }
+        .box:hover{
+            background: rgb(167, 168, 164);
+            width: 76px;
+        }
+        .box{
+            text-align: center;
+            padding-top: 10px;
+            margin-top: 24%;
+        }
+        .namad{
+            font-size: 25px;
+            text-align: center;
+            padding-top: 45px;
+        }
+        .matn{
+            text-align: center;
+        }
+        .detail{
+            text-align: center;
+            background: rgb(235, 232, 232);
+            padding: 12px;
+            box-shadow: 0px 2px 2px 1px rgb(17, 16, 16);
+            border-radius: 25px;
+            margin-top: 12px;
+        }
+        .star{
+            color: #a4a415;
+        }
+        .img{
+            border-radius: 50%;
+        }
+
+
+        .tanligh{
+            margin-top: 5%;
+            
+        }
+        .tab{
+            text-align: center;
+        }
+        .tat{
+            border: 1px solid rgb(12, 11, 11);
+            border-radius: 25px;
+            padding: 1px;
+        }
+        .but{
+            width: 250px;
+            background: #63708d;
+            border-radius: 12px;
+            padding: 8px;
+        }
+        .but:hover{
+            background: #48536d;
+            width: 245px;
+        }
+        .emg{
+            width: 200px;
+            border-radius: 12px;
+        }
+        @media(max-width:500px){
+            .emg{
+                display: none;
+            }
+        }
+    .footer{
+        text-align: center;
+        background: rgb(86, 86, 86);
+        color: white;
+    }
+    .footer2{
+        margin-top: 12px;
+        margin-bottom: 5px;
+    }
+    .footer2 a{
+        color: aliceblue;
+        border: 2px solid white;
+        border-radius: 25px;
+        padding: 5px;
+    }
+    .footer2 a:hover{
+        color: rgb(0, 0, 0);
+        background: rgb(240, 238, 109);
+        padding: 8px;
+    }
+
+    .show{
+        display: none;
+    }
+
+    .slider{
+        width: 250px;
+        text-align: center;
+        overflow: hidden;
+    }
+    .slides{
+        display: flex;
+        overflow-x: auto;
+        width: 250px;
+        border-radius: 5px;
+        scroll-behavior: smooth;
+        -webkit-overflow-scrolling: touch;
+        scroll-snap-points-x: repeat(300px);
+        scroll-snap-type: mandatory;
+    }
+    .slides::-webkit-scrollbar{
+        width: 10px;
+        height: 10px;
+    }
+    .slides::-webkit-scrollbar-thumb{
+        background: black;
+        border-radius: 10px;
+    }
+    .slides::-webkit-scrollbar-track{
+        background: transparent;
+    }
+    .slides > div {
+        flex-shrink: 0;
+        width: 300px;
+        height: 300px;
+        border-radius: 10px;
+        background: #eee;
+        transform-origin: center center;
+        transform: scale(1);
+        transition: transform 0.5s;
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 100px;
+    }
+    .slides > div:target {
+        transform: scale(0.8);
+    }
+    .author-info{
+        background: rgba(0, 0, 0, 0.75);
+        color: white;
+        padding: 0.75rem;
+        text-align: center;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        margin: 0;
+    }
+    .author-info a{
+        color: white
+    }
+
+    .slider > a {
+        display: inline-flex;
+        width: 1.5rem;
+        height: 1.5rem;
+        background: white;
+        text-decoration: none;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+        margin: 0 0  0.5rem 0;
+        position: relative;
+    }
+    .slider > a:active{
+        top: 1px;
+    }
+    .slider > a:focus{
+        background: rgb(0, 0, 0);
+    }
+    @supports (scroll-snap-type){
+        .slider > a {
+            display: none;
+        }
+    }
+    </style>
+    <script>
+        const boxes = document.querySelector('.contain');
+
+        window.addEventListener('scroll', showBox)
+
+        function showBox(){
+            const triggerBottom = window.innerHeight / 1.5;
+
+            boxes.forEach(box => {
+                const boxTop = box.getBoundingClientRect().top;
+
+                if(boxTop < triggerBottom){
+                    box.classList.add('show');
+                }else{
+                    box.classList.remove('show');
+                }
+            })
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <div class="contain ">
+            <ul class="nav nav-pills" role="tablist">
+                <li class="nav-item">
+                    <a class="nav-link" data-bs-toggle="pill" href="#home1">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" data-bs-toggle="pill" href="#menu1">Menu1</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" data-bs-toggle="pill" href="#menu2">Menu2</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" data-bs-toggle="pill" href="#login">login</a>
+                </li>
+                
+                <form action="" class="d-flex search">
+                    <input class="form-control me-2" type="text" placeholder="search">
+                    <button class="btn btn-primary">search</button>
+                </form>
+            </ul>
+          
+            <div class="tab-content">
+                <div id="menu1" class="container tab-pane fade">
+                    <ul>
+                        <li><a href="#">close</a></li>
+                        <li><a href="#">open</a></li>
+                        <li><a href="#">depend</a></li>
+                    </ul>
+                </div>
+                <div id="menu2" class="container tab-pane fade">
+                    <ul>
+                        <li><a href="#">keyboard</a></li>
+                        <li><a href="#">mouse</a></li>
+                        <li><a href="#">desktop</a></li>
+                        <li><a href="#">kase</a></li>
+                        <li><a href="#">hard</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </header>
+    <main>
+        <div class="bundell row">
+            <div class="kol col-6 col-md-6">
+                <p class="namad">NAMAD-ICON</p>
+            </div>
+            <div class="col-3 col-md-6 bux">
+                <div class="row delay">
+                    <div class="col-3 col-md-4 ">
+                        <p class="box" >face</p> 
+                    </div>
+                    <div class="col-3 col-md-4 ">
+                        <P class="box  fasele">text advice</P>
+                    </div>
+                    <div class="col-3 col-md-4 ">
+                        <p class="box fasela">on phone</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-3 col-md-4">
+                        <p class="box">wrote</p>
+                    </div>
+                    <div class="col-3 col-md-4">
+                        <p class="box fasele">writing papers</p>
+                    </div>
+                    <div class="col-3 col-md-4">
+                        <p class="box fasela">accompany</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="matn">
+            <h2>accusantium</h2>
+            <p>dolor sit amet consectetur, adipisicing </p>
+        </div>
+        <div class="row">
+            <div class="col-md-3 person">
+                <div class="detail">
+                    <img class="img" src="./git/toop1.png" alt="">
+                    <h4>jacson</h4>
+                    <p>online</p>
+                    <i class="fas fa-star star"></i>
+                    <i class="fas fa-star star"></i>
+                    <i class="fas fa-star star"></i>
+                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. 
+                        Laudantium minima odio vel doloremque possimus error, ducimus
+                        voluptatibus nemo. Iure nesciunt, eveniet 
+                    </p>
+                    <hr>
+                    <button class="btn btn-primary">recive</button>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="detail">
+                    <img class="img" src="./git/toop1.png" alt="">
+                    <h4>jacson</h4>
+                    <p>online</p>
+                    <i class="fas fa-star star"></i>
+                    <i class="fas fa-star star"></i>
+                    <i class="fas fa-star star"></i>
+                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. 
+                        Laudantium minima odio vel doloremque possimus error, ducimus
+                        voluptatibus nemo. Iure nesciunt, eveniet 
+                    </p>
+                    <hr>
+                    <button class="btn btn-primary">recive</button>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="detail">
+                    <img class="img" src="./git/toop1.png" alt="">
+                    <h4>jacson</h4>
+                    <p>online</p>
+                    <i class="fas fa-star star"></i>
+                    <i class="fas fa-star star"></i>
+                    <i class="fas fa-star star"></i>
+                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. 
+                        Laudantium minima odio vel doloremque possimus error, ducimus
+                        voluptatibus nemo. Iure nesciunt, eveniet 
+                    </p>
+                    <hr>
+                    <button class="btn btn-primary">recive</button>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="detail">
+                    <img class="img" src="./git/toop1.png" alt="">
+                    <h4>jacson</h4>
+                    <p>online</p>
+                    <i class="fas fa-star star"></i>
+                    <i class="fas fa-star star"></i>
+                    <i class="fas fa-star star"></i>
+                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. 
+                        Laudantium minima odio vel doloremque possimus error, ducimus
+                        voluptatibus nemo. Iure nesciunt, eveniet 
+                    </p>
+                    <hr>
+                    <button class="btn btn-primary">recive</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="row tanligh">
+            <div class="col-lg-9 tab">
+                <sapn class="tat">download application</span>
+                <h3>Lorem, ipsum dolor sit amet consectetur adipisicing </h3>
+                <p>elit. Molestiae dignissimos, neque commodi distinctio expedita nisi,
+                 accusantium quo officiis similique aliquid ullam, veniam
+                blanditiis aliquam rem asperiores iusto quis voluptatum a.</p>
+
+                <div class="row">
+                    <div class="col-lg-6">
+                        <button class="but">officiis</button>
+                    </div>
+                    <div class="col-lg-6">
+                        <button class="but">asperiores</button>
+                    </div>
+                    <div class="col-lg-6">
+                        <button class="but">voluptatum</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3">
+                <!-- <div>
+                    <img class="emg" src="./git/toop1.png" alt="">
+                </div> -->
+                <div class="slider emg">
+                    <a href="#slide-1">1</a>
+                    <a href="#slide-2">2</a>
+                    <a href="#slide-3">3</a>
+                    <a href="#slide-4">4</a>
+                    <a href="#slide-5">5</a>
+                  
+                    <div class="slides">
+                        <div id="slide-1">
+                            1
+                        </div>
+                        <div id="slide-2">
+                            2
+                        </div>
+                        <div id="slide-3">
+                            3
+                        </div>
+                        <div id="slide-4">
+                            4
+                        </div>
+                        <div id="slide-5">
+                            5
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <div class="row footer">
+            <div class="col-lg-8 col-sm-8 col-p-8 footer1">
+                <p> amet consectetur </p>
+                <p>adipisicing elit. Accusantium vel quis saepe! Nesciunt, placeat itaque 
+                    consectetur sit aperiam odit necessitatibus. Numquam ipsam 
+                    obcaecati iusto perspiciatis in tempore consequuntur sint iure!
+                </p>
+            </div>
+            <div class="col-lg-4 col-sm-4 col-p-4 footer2">
+                <a href="#">instagram</a>
+                <a href="#">facebook</a>
+                <a href="#">whatsapp</a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
