@@ -13,171 +13,7 @@
     <style>
       
     </style>
-    <script>
-        const boxes = document.querySelector('.contain');
-
-        window.addEventListener('scroll', showBox)
-
-        function showBox(){
-            const triggerBottom = window.innerHeight / 1.5;
-
-            boxes.forEach(box => {
-                const boxTop = box.getBoundingClientRect().top;
-
-                if(boxTop < triggerBottom){
-                    box.classList.add('show');
-                }else{
-                    box.classList.remove('show');
-                }
-            })
-        }
-        
-                function time(){
-            let time = new Date();
-            time = document.getElementById('timer').innerText = time.toLocaleTimeString();
-        }
-        setInterval(time, 1000);
-
-        const boxes = document.querySelectorAll('.b');
-
-        window.addEventListener('scroll', showBox)
-
-        function showBox(){
-            const triggerBottom = window.innerHeight / 2;
-
-            boxes.forEach(b => {
-                const boxTop = b.getBoundingClientRect().top;
-
-                if(boxTop < triggerBottom){
-                    b.classList.add('sho');
-                }else{
-                    b.classList.remove('sho');
-                }
-            })
-        }
-
-        const box = document.querySelectorAll('.c');
-
-        window.addEventListener('scroll', Box)
-
-        function Box(){
-            const Bottom = window.innerHeight / 65;
-
-            box.forEach(c => {
-                const box = c.getBoundingClientRect().top;
-
-                if(box < Bottom){
-                    c.classList.remove('shoo');
-                }else{
-                    c.classList.add('shoo');
-                }
-            })
-        }
-        const inputText = document.querySelector('#add-book .input-add');
-        const link = document.querySelector('.button');
-        const ul = document.querySelector('.ul');
-        const checkbox = document.querySelector('#hide input');
-        const inputSearch = document.querySelector('#search-books input');
-        const spanDelete = `<span class="delete"> حذف </span>`;
-
-        link.addEventListener('click', function(e){
-
-        const spanName = document.createElement('span');
-        spanName.className= 'name';
-        spanName.textContent = inputText.value;
-
-        const li = document.createElement('li');
-
-        li.appendChild(spanName);
-        li.innerHTML += spanDelete;
-
-        ul.appendChild(li);
-
-        storeToLocalStorage(inputText.value)
-
-        inputText.value = '';
-        e.preventDefault();
-        })
-
-        ul.addEventListener('click', function(e){
-        if(e.target.className === 'delete'){
-            e.target.parentElement.remove();
-            removeFromLocalStorage(e.target.parentElement.children[0].textContent);
-        }
-        })
-
-       
-        checkbox.addEventListener('change', function(e){
-        if(checkbox.checked === true){
-            ul.style.display = 'none';
-        }else{
-            ul.style.display = 'block';
-        }
-        })
-        inputSearch.addEventListener('keyup', function(e){
-        for(let book of ul.children){
-            if(book.firstElementChild.textContent.indexOf(inputSearch.value) !==-1){
-                book.style.display = 'block';
-            }else{
-                book.style.display = 'none';
-            }
-        }
-        })
-        document.addEventListener('DOMContentLoaded', function(e){
-        let tasks;
-        if(localStorage.getItem('tasks') === null){
-            tasks = [];
-        }else {
-            tasks = localStorage.getItem('tasks').split(',');
-        }
-
-        for(let item of tasks){
-        const spanName = document.createElement('span');
-        spanName.className= 'name';
-        spanName.textContent = item;
-
-        const li = document.createElement('li');
-
-        li.appendChild(spanName);
-        li.innerHTML += spanDelete;
-
-        ul.appendChild(li);
-        }
-
-        })
-
-        function storeToLocalStorage(task){
-        let tasks;
-        if(localStorage.getItem('tasks') === null){
-            tasks = [];
-        }else {
-            tasks = localStorage.getItem('tasks').split(',');
-        }
-
-        tasks.push(task);
-
-        localStorage.setItem('tasks', tasks)
-        }
-        function removeFromLocalStorage(task){
-        let tasks;
-        if(localStorage.getItem('tasks') === null){
-            tasks = [];
-        }else {
-            tasks = localStorage.getItem('tasks').split(',');
-        }
-
-        for(let i=0; i<tasks.length; i++){
-            if(tasks[i] === task){
-                tasks.splice(i,1);
-            }
-        }
-        if(tasks.length === 0){
-            localStorage.clear();
-        }else{
-            localStorage.setItem('tasks', tasks);
-        }
-        }
-    </script>
+   
 </head>
 <body>
      <header>
@@ -443,8 +279,170 @@
             </div>
         </div>
     </footer>
-       <script>
+     <script>
+        const boxes = document.querySelector('.contain');
 
+        window.addEventListener('scroll', showBox)
+
+        function showBox(){
+            const triggerBottom = window.innerHeight / 1.5;
+
+            boxes.forEach(box => {
+                const boxTop = box.getBoundingClientRect().top;
+
+                if(boxTop < triggerBottom){
+                    box.classList.add('show');
+                }else{
+                    box.classList.remove('show');
+                }
+            })
+        }
+        
+                function time(){
+            let time = new Date();
+            time = document.getElementById('timer').innerText = time.toLocaleTimeString();
+        }
+        setInterval(time, 1000);
+
+        const boxes = document.querySelectorAll('.b');
+
+        window.addEventListener('scroll', showBox)
+
+        function showBox(){
+            const triggerBottom = window.innerHeight / 2;
+
+            boxes.forEach(b => {
+                const boxTop = b.getBoundingClientRect().top;
+
+                if(boxTop < triggerBottom){
+                    b.classList.add('sho');
+                }else{
+                    b.classList.remove('sho');
+                }
+            })
+        }
+
+        const box = document.querySelectorAll('.c');
+
+        window.addEventListener('scroll', Box)
+
+        function Box(){
+            const Bottom = window.innerHeight / 65;
+
+            box.forEach(c => {
+                const box = c.getBoundingClientRect().top;
+
+                if(box < Bottom){
+                    c.classList.remove('shoo');
+                }else{
+                    c.classList.add('shoo');
+                }
+            })
+        }
+        const inputText = document.querySelector('#add-book .input-add');
+        const link = document.querySelector('.button');
+        const ul = document.querySelector('.ul');
+        const checkbox = document.querySelector('#hide input');
+        const inputSearch = document.querySelector('#search-books input');
+        const spanDelete = `<span class="delete"> حذف </span>`;
+
+        link.addEventListener('click', function(e){
+
+        const spanName = document.createElement('span');
+        spanName.className= 'name';
+        spanName.textContent = inputText.value;
+
+        const li = document.createElement('li');
+
+        li.appendChild(spanName);
+        li.innerHTML += spanDelete;
+
+        ul.appendChild(li);
+
+        storeToLocalStorage(inputText.value)
+
+        inputText.value = '';
+        e.preventDefault();
+        })
+
+        ul.addEventListener('click', function(e){
+        if(e.target.className === 'delete'){
+            e.target.parentElement.remove();
+            removeFromLocalStorage(e.target.parentElement.children[0].textContent);
+        }
+        })
+
+       
+        checkbox.addEventListener('change', function(e){
+        if(checkbox.checked === true){
+            ul.style.display = 'none';
+        }else{
+            ul.style.display = 'block';
+        }
+        })
+        inputSearch.addEventListener('keyup', function(e){
+        for(let book of ul.children){
+            if(book.firstElementChild.textContent.indexOf(inputSearch.value) !==-1){
+                book.style.display = 'block';
+            }else{
+                book.style.display = 'none';
+            }
+        }
+        })
+        document.addEventListener('DOMContentLoaded', function(e){
+        let tasks;
+        if(localStorage.getItem('tasks') === null){
+            tasks = [];
+        }else {
+            tasks = localStorage.getItem('tasks').split(',');
+        }
+
+        for(let item of tasks){
+        const spanName = document.createElement('span');
+        spanName.className= 'name';
+        spanName.textContent = item;
+
+        const li = document.createElement('li');
+
+        li.appendChild(spanName);
+        li.innerHTML += spanDelete;
+
+        ul.appendChild(li);
+        }
+
+        })
+
+        function storeToLocalStorage(task){
+        let tasks;
+        if(localStorage.getItem('tasks') === null){
+            tasks = [];
+        }else {
+            tasks = localStorage.getItem('tasks').split(',');
+        }
+
+        tasks.push(task);
+
+        localStorage.setItem('tasks', tasks)
+        }
+        function removeFromLocalStorage(task){
+        let tasks;
+        if(localStorage.getItem('tasks') === null){
+            tasks = [];
+        }else {
+            tasks = localStorage.getItem('tasks').split(',');
+        }
+
+        for(let i=0; i<tasks.length; i++){
+            if(tasks[i] === task){
+                tasks.splice(i,1);
+            }
+        }
+        if(tasks.length === 0){
+            localStorage.clear();
+        }else{
+            localStorage.setItem('tasks', tasks);
+        }
+        }
     </script>
 </body>
 </html>
