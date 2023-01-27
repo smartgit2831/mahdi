@@ -34,8 +34,8 @@
     </script>
 </head>
 <body>
-    <header>
-        <div class="contain ">
+     <header>
+        <div class="contain">
             <ul class="nav nav-pills" role="tablist">
                 <li class="nav-item">
                     <a class="nav-link" data-bs-toggle="pill" href="#home1">Home</a>
@@ -79,7 +79,8 @@
     <main>
         <div class="bundell row">
             <div class="kol col-6 col-md-6">
-                <p class="namad">NAMAD-ICON</p>
+                <!-- <p class="namad">NAMAD-ICON</p> -->
+                <p class="namad" id="timer"></p>
             </div>
             <div class="col-3 col-md-6 bux">
                 <div class="row delay">
@@ -110,10 +111,11 @@
             <h2>accusantium</h2>
             <p>dolor sit amet consectetur, adipisicing </p>
         </div>
+
         <div class="row">
-            <div class="col-md-3 person">
+            <div class="col-md-3 person c ">
                 <div class="detail">
-                    <img class="img" src="./toop1.png" alt="">
+                    <img class="img" src="./git/toop1.png" alt="">
                     <h4>jacson</h4>
                     <p>online</p>
                     <i class="fas fa-star star"></i>
@@ -127,9 +129,9 @@
                     <button class="btn btn-primary">recive</button>
                 </div>
             </div>
-            <div class="col-md-3">
+            <div class="col-md-3 b">
                 <div class="detail">
-                    <img class="img" src="./toop1.png" alt="">
+                    <img class="img" src="./git/toop1.png" alt="">
                     <h4>jacson</h4>
                     <p>online</p>
                     <i class="fas fa-star star"></i>
@@ -143,9 +145,9 @@
                     <button class="btn btn-primary">recive</button>
                 </div>
             </div>
-            <div class="col-md-3">
+            <div class="col-md-3 c">
                 <div class="detail">
-                    <img class="img" src="./toop1.png" alt="">
+                    <img class="img" src="./git/toop1.png" alt="">
                     <h4>jacson</h4>
                     <p>online</p>
                     <i class="fas fa-star star"></i>
@@ -159,9 +161,9 @@
                     <button class="btn btn-primary">recive</button>
                 </div>
             </div>
-            <div class="col-md-3">
+            <div class="col-md-3 b">
                 <div class="detail">
-                    <img class="img" src="./toop1.png" alt="">
+                    <img class="img" src="./git/toop1.png" alt="">
                     <h4>jacson</h4>
                     <p>online</p>
                     <i class="fas fa-star star"></i>
@@ -199,7 +201,7 @@
             </div>
             <div class="col-lg-3">
                 <!-- <div>
-                    <img class="emg" src="./toop1.png" alt="">
+                    <img class="emg" src="./git/toop1.png" alt="">
                 </div> -->
                 <div class="slider emg">
                     <a href="#slide-1">1</a>
@@ -228,10 +230,60 @@
                 </div>
             </div>
         </div>
+
+
+        <div id="container">
+            <header>
+                <div id="page-banner">
+                    <h1 class="title">OpenBook</h1>
+                    <form id="search-books">
+                        <input type="text" placeholder="search book...">
+                    </form>
+                </div>
+            </header>
+    
+            <div id="book-list">
+                <h2 class="title">کتاب های اخیر</h2>
+    
+                <div class="clear"></div>
+    
+                <ul class="ul">
+                    <li>
+                        <span class="name">اثر مرکب</span>
+                        <span class="delete">حذف</span>
+                    </li>
+                    <li>
+                        <span class="name">قدرت عادت</span>
+                        <span class="delete">حذف</span>
+                    </li>
+                    <li>
+                        <span class="name">خودت را به فنات نده</span>
+                        <span class="delete">حذف</span>
+                    </li>
+    
+                    <li>
+                        <span class="name">قلعه حیوانات</span>
+                        <span class="delete">حذف</span>
+                    </li>
+                </ul>
+            </div>
+    
+            <form id="hide">
+                <label>مخفی کردن کتاب ها</label>
+                <input type="checkbox">
+            </form>
+    
+            <div class="clear"></div>
+    
+            <form id="add-book">
+                <input class="input-add" type="text" placeholder="add a book..."/>
+                <button class="button">اضافه</button>
+            </form>
+        </div>
     </main>
     <footer>
         <div class="row footer">
-            <div class="col-lg-8 col-sm-8 col-p-8 footer1">
+            <div class="col-lg-8 col-sm-8 col-p-8 footer1 ">
                 <p> amet consectetur </p>
                 <p>adipisicing elit. Accusantium vel quis saepe! Nesciunt, placeat itaque 
                     consectetur sit aperiam odit necessitatibus. Numquam ipsam 
@@ -245,5 +297,152 @@
             </div>
         </div>
     </footer>
+       <script>
+        function time(){
+            let time = new Date();
+            time = document.getElementById('timer').innerText = time.toLocaleTimeString();
+        }
+        setInterval(time, 1000);
+
+        const boxes = document.querySelectorAll('.b');
+
+        window.addEventListener('scroll', showBox)
+
+        function showBox(){
+            const triggerBottom = window.innerHeight / 2;
+
+            boxes.forEach(b => {
+                const boxTop = b.getBoundingClientRect().top;
+
+                if(boxTop < triggerBottom){
+                    b.classList.add('sho');
+                }else{
+                    b.classList.remove('sho');
+                }
+            })
+        }
+
+        const box = document.querySelectorAll('.c');
+
+        window.addEventListener('scroll', Box)
+
+        function Box(){
+            const Bottom = window.innerHeight / 65;
+
+            box.forEach(c => {
+                const box = c.getBoundingClientRect().top;
+
+                if(box < Bottom){
+                    c.classList.remove('shoo');
+                }else{
+                    c.classList.add('shoo');
+                }
+            })
+        }
+        const inputText = document.querySelector('#add-book .input-add');
+        const link = document.querySelector('.button');
+        const ul = document.querySelector('.ul');
+        const checkbox = document.querySelector('#hide input');
+        const inputSearch = document.querySelector('#search-books input');
+        const spanDelete = `<span class="delete"> حذف </span>`;
+
+        link.addEventListener('click', function(e){
+
+        const spanName = document.createElement('span');
+        spanName.className= 'name';
+        spanName.textContent = inputText.value;
+
+        const li = document.createElement('li');
+
+        li.appendChild(spanName);
+        li.innerHTML += spanDelete;
+
+        ul.appendChild(li);
+
+        storeToLocalStorage(inputText.value)
+
+        inputText.value = '';
+        e.preventDefault();
+        })
+
+        ul.addEventListener('click', function(e){
+        if(e.target.className === 'delete'){
+            e.target.parentElement.remove();
+            removeFromLocalStorage(e.target.parentElement.children[0].textContent);
+        }
+        })
+
+       
+        checkbox.addEventListener('change', function(e){
+        if(checkbox.checked === true){
+            ul.style.display = 'none';
+        }else{
+            ul.style.display = 'block';
+        }
+        })
+        inputSearch.addEventListener('keyup', function(e){
+        for(let book of ul.children){
+            if(book.firstElementChild.textContent.indexOf(inputSearch.value) !==-1){
+                book.style.display = 'block';
+            }else{
+                book.style.display = 'none';
+            }
+        }
+        })
+        document.addEventListener('DOMContentLoaded', function(e){
+        let tasks;
+        if(localStorage.getItem('tasks') === null){
+            tasks = [];
+        }else {
+            tasks = localStorage.getItem('tasks').split(',');
+        }
+
+        for(let item of tasks){
+        const spanName = document.createElement('span');
+        spanName.className= 'name';
+        spanName.textContent = item;
+
+        const li = document.createElement('li');
+
+        li.appendChild(spanName);
+        li.innerHTML += spanDelete;
+
+        ul.appendChild(li);
+        }
+
+        })
+
+        function storeToLocalStorage(task){
+        let tasks;
+        if(localStorage.getItem('tasks') === null){
+            tasks = [];
+        }else {
+            tasks = localStorage.getItem('tasks').split(',');
+        }
+
+        tasks.push(task);
+
+        localStorage.setItem('tasks', tasks)
+        }
+        function removeFromLocalStorage(task){
+        let tasks;
+        if(localStorage.getItem('tasks') === null){
+            tasks = [];
+        }else {
+            tasks = localStorage.getItem('tasks').split(',');
+        }
+
+        for(let i=0; i<tasks.length; i++){
+            if(tasks[i] === task){
+                tasks.splice(i,1);
+            }
+        }
+        if(tasks.length === 0){
+            localStorage.clear();
+        }else{
+            localStorage.setItem('tasks', tasks);
+        }
+        }
+    </script>
 </body>
 </html>
