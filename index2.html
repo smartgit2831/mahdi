@@ -689,7 +689,7 @@
         <script src="./sunlight-plugin.doclinks.js"></script>
         <script src="./sunlight-plugin.linenumbers.js"></script>
         <script src="./sunlight-plugin.menu.js"></script>
-        
+        <script src="./jquery.min.js"></script>
         <script src="./jquery.scrollTo.js"></script>
         <script src="./jquery.localScroll.js"></script>
         <script src="./bootstrap-dropdown.js"></script>
@@ -697,8 +697,28 @@
 
         <script> prettyPrint(); </script>
         <script>  Sunlight.highlightAll({lineNumbers:true,  showMenu: true, enableDoclinks :true}); </script>
-	    
-	<script>
+	       
+
+        <script>
+            function openDeeplinkedElement (skipAni) {
+                $("dt h4.member-collapsed[id='" + window.location.hash.substring(1).replace(":", "\\:") +"']").trigger("click", skipAni);
+            }
+            $( function () {
+                $( "#toc" ).toc( {
+                    anchorName  : function(i, heading, prefix) {
+                        return $(heading).attr("id") || ( prefix + i );
+                    },
+                    selectors   : "h1:visible,h2:visible,h3:visible,h4:visible",
+                    onScrollFinish : openDeeplinkedElement,
+                    highlightOffset : 10,
+                    scrollOffset: 60
+                } );
+                $( "#toc>ul" ).addClass( "nav nav-pills nav-stacked" );
+                $( "#main span[id^='toc']" ).addClass( "toc-shim" );
+
+            } );
+	</script>
+   	<script>
             $( function () {
                 window.setTimeout(function () {
                     $(document).scrollTop($(document).scrollTop()-60);
@@ -732,27 +752,6 @@
                 if (hash.length > 0)
                 openDeeplinkedElement(true);
             } );
-        </script>   
-
-        <script>
-            function openDeeplinkedElement (skipAni) {
-                $("dt h4.member-collapsed[id='" + window.location.hash.substring(1).replace(":", "\\:") +"']").trigger("click", skipAni);
-            }
-            $( function () {
-                $( "#toc" ).toc( {
-                    anchorName  : function(i, heading, prefix) {
-                        return $(heading).attr("id") || ( prefix + i );
-                    },
-                    selectors   : "h1:visible,h2:visible,h3:visible,h4:visible",
-                    onScrollFinish : openDeeplinkedElement,
-                    highlightOffset : 10,
-                    scrollOffset: 60
-                } );
-                $( "#toc>ul" ).addClass( "nav nav-pills nav-stacked" );
-                $( "#main span[id^='toc']" ).addClass( "toc-shim" );
-
-            } );
-	</script>
-   
+        </script>
     </body>
 </html>
